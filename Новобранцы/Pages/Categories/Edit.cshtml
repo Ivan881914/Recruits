@@ -1,0 +1,71 @@
+﻿@page
+@model Recruits.Pages.Categories.EditModel
+@{
+}
+
+<form method="post">
+	<input hidden asp-for="Category.Id" />
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Редактировать</h2>
+            <hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="Category.RecruitName">Имя кандидата</label>
+			<input asp-for="Category.RecruitName" class="form-control" />
+			<span asp-validation-for="Category.RecruitName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.PhoneNumber">Номер телефона</label>
+			<input asp-for="Category.PhoneNumber" class="form-control" />
+			<span asp-validation-for="Category.PhoneNumber" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.RecruitLink">Ссылка на резюме</label>
+			<input asp-for="Category.RecruitLink" class="form-control" />
+			<span asp-validation-for="Category.RecruitLink" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.RecruitJobTitle">Желаемая должность</label>
+			<input asp-for="Category.RecruitJobTitle" class="form-control" />
+			<span asp-validation-for="Category.RecruitJobTitle" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.FirstInterview">Дата первого интервью</label>
+			<input asp-for="Category.FirstInterview" class="form-control" />
+			<span asp-validation-for="Category.FirstInterview" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.HRName">Имя сотрудника проводившего интервью</label>
+			<input asp-for="Category.HRName" class="form-control" />
+			<span asp-validation-for="Category.HRName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.HRJobTitle">Должность сотрудника проводившего интервью</label>
+			<input asp-for="Category.HRJobTitle" class="form-control" />
+			<span asp-validation-for="Category.HRJobTitle" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.TestRealizationTime">Время на реализацию ТЗ (до *дата*)</label>
+			<input asp-for="Category.TestRealizationTime" class="form-control" />
+			<span asp-validation-for="Category.TestRealizationTime" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.TestСompletionTime">Дата принятия ТЗ</label>
+			<input asp-for="Category.TestСompletionTime" class="form-control" />
+			<span asp-validation-for="Category.TestСompletionTime" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Category.Comment">Комментарий</label>
+			<input asp-for="Category.Comment" class="form-control" />
+			<span asp-validation-for="Category.Comment" class="text-danger"></span>
+		</div>
+
+		<button type="submit" class="btn btn-primary" style="width:150px;">Сохранить</button>
+		<a asp-page="Index" class="btn btn-secondary" style="width:250px;">Назад к списку</a>
+
+       
+	</div>
+	
+</form>

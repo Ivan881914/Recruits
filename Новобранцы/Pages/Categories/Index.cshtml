@@ -1,0 +1,98 @@
+﻿@page
+@model Recruits.Pages.Categories.IndexModel
+@{
+}
+@if (TempData["success"] != null)
+{
+	<script>alert("Изменения сохранены")</script>
+    <!--<h4>@TempData["success"]</h4>-->
+}
+
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">Кандидаты</h2>
+        </div>
+		<div class="col-6 text-end">
+			
+			<a asp-page="create" class="btn btn-primary">
+				<i class="bi bi-plus-square"></i> &nbsp;Добавить
+			</a>
+		</div>
+	</div>
+
+	<br /><br />
+
+	<table class="table table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+                <!--<th>
+                    Id
+                </th>-->
+				
+				<th>
+					Имя кандидата
+				</th>
+				<th>
+					Номер телефона
+				</th>
+				<th>
+					Ссылка на резюме
+				</th>
+				<th>
+					Желаемая должность 
+				</th>
+				<th>
+					Дата первого интервью
+				</th>
+				<th>
+                    Имя сотрудника проводившего интервью
+				</th>
+				<th>
+                    Должность сотрудника проводившего интервью
+				</th>
+				<th>
+                    Время на реализацию ТЗ (до *дата*)
+				</th>
+				<th>
+					Дата принятия ТЗ
+				</th>
+				<th>
+                    Комментарий
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var obj in Model.Categories)
+			{
+				<tr>
+                    <!--<td width="5%">@obj.Id</td>-->
+					<td width="5%">@obj.RecruitName</td>
+					<td width="5%">@obj.PhoneNumber</td>
+					<td width="5%">@obj.RecruitLink</td>
+					<td width="5%">@obj.RecruitJobTitle</td>
+					<td width="5%">@obj.FirstInterview</td>
+					<td width="5%">@obj.HRName</td>
+					<td width="5%">@obj.HRJobTitle</td>
+					<td width="5%">@obj.TestRealizationTime</td>
+					<td width="5%">@obj.TestСompletionTime</td>
+					<td width="5%">@obj.Comment</td>
+					
+					<td>
+						<div class="w-75 btn-group" role="group">
+						<a asp-page="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2">
+							<i class="bi bi-pencil-square">Редактировать</i>
+						</a>
+						<a asp-page="Delete" asp-route-id="@obj.Id"  class="btn btn-danger mx-2">
+							<i class="bi bi-trash-fill">Удалить</i>
+						</a>
+						</div>
+					</td>
+				</tr>
+			}
+			
+		</tbody>
+	</table>
+
+</div>

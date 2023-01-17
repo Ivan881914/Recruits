@@ -1,2 +1,3 @@
 # Recruits
-ASP.NET Core
+###ASP.NET Core, MsSql
+System for accounting for the performance of tasks by applicants.
